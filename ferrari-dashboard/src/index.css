@@ -1,0 +1,427 @@
+/* fonts loaded via <link> in index.html; no @import needed */
+
+:root {
+  --f-red: #DC0000;
+  --f-gold: #8a7d68;
+  --f-cream: #161616;
+  --f-dark: #f5f4f0;
+  --f-charcoal: #ffffff;
+  /* Secondary / “grey” copy: black on light backgrounds */
+  --f-muted: #0a0a0a;
+
+  --f-surface: #ffffff;
+  --f-surface-hover: #fafaf8;
+  --f-border: rgba(0, 0, 0, 0.09);
+  --f-border-subtle: rgba(0, 0, 0, 0.05);
+  --f-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 14px rgba(0, 0, 0, 0.04);
+
+  --f-placeholder: rgba(0, 0, 0, 0.55);
+  --f-nav-bg: rgba(255, 255, 255, 0.86);
+  --f-nav-bg-scrolled: rgba(255, 255, 255, 0.96);
+  --f-nav-shadow-scrolled: 0 8px 28px rgba(0, 0, 0, 0.08);
+  --f-nav-inset-top: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  --f-footer-bg: rgba(255, 255, 255, 0.82);
+  --f-page-wash: linear-gradient(
+    165deg,
+    rgba(245, 244, 240, 0.94) 0%,
+    rgba(245, 244, 240, 0.9) 55%,
+    rgba(245, 244, 240, 0.93) 100%
+  );
+  --f-page-grid:
+    repeating-linear-gradient(90deg, rgba(22, 22, 22, 0.022) 0px, transparent 1px, transparent 34px, rgba(22, 22, 22, 0.022) 35px),
+    repeating-linear-gradient(0deg, rgba(22, 22, 22, 0.022) 0px, transparent 1px, transparent 34px, rgba(22, 22, 22, 0.022) 35px);
+  --f-row-stripe: rgba(0, 0, 0, 0.02);
+  --f-row-hover: rgba(220, 0, 0, 0.04);
+  --f-card-hover-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+  --f-hero-fallback: linear-gradient(145deg, #e8e6e1 0%, #d4d1ca 45%, #c8c4bc 100%);
+  --f-select-option-bg: #ffffff;
+  --f-select-option-fg: #161616;
+
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+
+  color-scheme: light;
+}
+
+html[data-theme='dark'] {
+  --f-gold: #c9a227;
+  --f-cream: #ece8e0;
+  --f-dark: #0e0e0e;
+  --f-charcoal: #141414;
+  /* Secondary / “grey” copy: white on dark backgrounds */
+  --f-muted: #ffffff;
+
+  --f-surface: #161616;
+  --f-surface-hover: #1e1e1e;
+  --f-border: rgba(255, 255, 255, 0.1);
+  --f-border-subtle: rgba(255, 255, 255, 0.06);
+  --f-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45), 0 4px 20px rgba(0, 0, 0, 0.35);
+
+  --f-placeholder: rgba(255, 255, 255, 0.55);
+  --f-nav-bg: rgba(18, 18, 18, 0.88);
+  --f-nav-bg-scrolled: rgba(10, 10, 10, 0.94);
+  --f-nav-shadow-scrolled: 0 10px 36px rgba(0, 0, 0, 0.55);
+  --f-nav-inset-top: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --f-footer-bg: rgba(16, 16, 16, 0.92);
+  --f-page-wash: linear-gradient(
+    165deg,
+    rgba(14, 14, 14, 0.92) 0%,
+    rgba(12, 12, 12, 0.88) 55%,
+    rgba(14, 14, 14, 0.91) 100%
+  );
+  --f-page-grid:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0px, transparent 1px, transparent 34px, rgba(255, 255, 255, 0.04) 35px),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.04) 0px, transparent 1px, transparent 34px, rgba(255, 255, 255, 0.04) 35px);
+  --f-row-stripe: rgba(255, 255, 255, 0.03);
+  --f-row-hover: rgba(220, 0, 0, 0.12);
+  --f-card-hover-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
+  --f-hero-fallback: linear-gradient(145deg, #1a1a1a 0%, #141414 45%, #101010 100%);
+  --f-select-option-bg: #1c1c1c;
+  --f-select-option-fg: #ece8e0;
+
+  color-scheme: dark;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--f-dark);
+  color: var(--f-cream);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+
+img { display: block; }
+button { outline: none; }
+::placeholder { color: var(--f-placeholder); }
+
+select option {
+  background: var(--f-select-option-bg);
+  color: var(--f-select-option-fg);
+}
+
+input, select {
+  font-family: 'DM Sans', sans-serif;
+  border-radius: var(--r-sm);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus, select:focus {
+  border-color: rgba(220, 0, 0, 0.35) !important;
+  box-shadow: 0 0 0 3px rgba(220, 0, 0, 0.06);
+}
+
+.card {
+  background: var(--f-surface);
+  border: 1px solid var(--f-border);
+  border-radius: var(--r-md);
+  box-shadow: var(--f-shadow-sm);
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Sticky header: nav + Italian tricolor bar */
+.navbar-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-shell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+  height: 60px;
+  background: var(--f-nav-bg);
+  backdrop-filter: blur(14px) saturate(1.08);
+  -webkit-backdrop-filter: blur(14px) saturate(1.08);
+  border-bottom: 1px solid var(--f-border-subtle);
+  box-shadow: var(--f-nav-inset-top);
+  transition:
+    background 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+
+.navbar-shell.navbar-shell--scrolled {
+  background: var(--f-nav-bg-scrolled);
+  box-shadow:
+    var(--f-nav-inset-top),
+    var(--f-nav-shadow-scrolled);
+  border-bottom-color: var(--f-border);
+}
+
+.navbar-tricolor {
+  height: 4px;
+  width: 100%;
+  flex-shrink: 0;
+  /* Hard stops so each band stays visible at 1px+ effective width */
+  background: linear-gradient(
+    90deg,
+    #009246 0%,
+    #009246 33.333%,
+    #f2f2f2 33.333%,
+    #f2f2f2 66.666%,
+    #ce2b37 66.666%,
+    #ce2b37 100%
+  );
+  pointer-events: none;
+}
+
+.navbar-links {
+  display: flex;
+  gap: clamp(1rem, 3vw, 2rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar-links li {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-link-btn {
+  position: relative;
+  z-index: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: clamp(11px, 1.8vw, 13px);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--f-muted);
+  padding: 0.45rem 0.35rem;
+  transition: color 0.2s ease;
+}
+
+.navbar-link-btn--active {
+  color: var(--f-cream);
+  font-weight: 600;
+}
+
+.navbar-link-btn:not(.navbar-link-btn--active):hover {
+  color: var(--f-red);
+}
+
+.nav-icon-btn:focus-visible,
+.navbar-link-btn:focus-visible,
+.navbar-cta:focus-visible,
+.navbar-brand-btn:focus-visible {
+  outline: 2px solid var(--f-red);
+  outline-offset: 3px;
+}
+
+.nav-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 36px;
+  background: var(--f-surface);
+  border: 1px solid var(--f-border);
+  border-radius: var(--r-sm);
+  color: var(--f-cream);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+.nav-icon-btn:hover {
+  border-color: var(--f-red);
+  background: var(--f-surface-hover);
+}
+
+.navbar-cta {
+  background: var(--f-red);
+  color: #fff;
+  border: none;
+  border-radius: var(--r-sm);
+  padding: 8px 18px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 2px 8px rgba(220, 0, 0, 0.35);
+  transition:
+    opacity 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.navbar-cta:hover {
+  opacity: 0.94;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 4px 14px rgba(220, 0, 0, 0.45);
+}
+
+.navbar-cta:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 720px) {
+  .navbar-links {
+    gap: 0.65rem;
+  }
+
+  .navbar-link-btn {
+    letter-spacing: 0.08em;
+    padding: 0.35rem 0.2rem;
+  }
+}
+
+.driver-card {
+  border-radius: var(--r-md);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+  box-shadow: var(--f-shadow-sm);
+}
+a.driver-card {
+  text-decoration: none;
+  color: inherit;
+}
+.driver-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--f-card-hover-shadow);
+  border-color: rgba(220, 0, 0, 0.2) !important;
+}
+
+.t-row {
+  transition: background 0.15s;
+}
+.t-row:nth-child(even) {
+  background: var(--f-row-stripe);
+}
+.t-row:hover {
+  background: var(--f-row-hover) !important;
+}
+
+/* HeroButton (Home page CTAs). Replaces a handful of inline-styled
+   <button>s with onMouseEnter/Leave handlers. Hover state lives here
+   so the React component stays markup-only. */
+.btn {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--f-red);
+  color: #ffffff;
+  border: none;
+}
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--f-cream);
+  border: 1px solid var(--f-border);
+}
+.btn-secondary:hover {
+  border-color: var(--f-cream);
+}
+.btn-secondary--accent:hover {
+  border-color: var(--f-red);
+  color: var(--f-red);
+}
+
+/* Animated background. Two soft red radial gradients drifting on long,
+   offset loops. Sits behind everything as a fixed full-viewport layer.
+   Pages with their own photo backgrounds will cover it; on Home the
+   hero is transparent so the motion is visible behind the title. */
+.animated-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.animated-bg__ember {
+  position: absolute;
+  width: 60vmax;
+  height: 60vmax;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.32;
+  will-change: transform;
+}
+
+html[data-theme='dark'] .animated-bg__ember {
+  opacity: 0.22;
+}
+
+.animated-bg__ember--a {
+  top: -20vmax;
+  left: -15vmax;
+  background: radial-gradient(circle at center, rgba(220, 0, 0, 0.55), transparent 65%);
+  animation: ember-drift-a 28s ease-in-out infinite alternate;
+}
+
+.animated-bg__ember--b {
+  bottom: -25vmax;
+  right: -20vmax;
+  background: radial-gradient(circle at center, rgba(220, 0, 0, 0.40), transparent 65%);
+  animation: ember-drift-b 36s ease-in-out infinite alternate;
+}
+
+@keyframes ember-drift-a {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(18vw, 12vh) scale(1.08); }
+  100% { transform: translate(8vw, 28vh) scale(0.96); }
+}
+
+@keyframes ember-drift-b {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(-14vw, -10vh) scale(1.06); }
+  100% { transform: translate(-22vw, -4vh) scale(0.94); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-bg__ember {
+    animation: none;
+  }
+}

@@ -1,9 +1,9 @@
 # Brian Maina's Submission
-**Date**: April 19th 2026
+**Date**: April 19, 2026
 
 **Email**: bmmaina@bu.edu
 
-**Class Year**: Class of '28
+**Class Year**: <2028>
 
 **Favorite F1 Team**: Scuderia Ferrari
 

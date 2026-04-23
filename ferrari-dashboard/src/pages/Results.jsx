@@ -5,6 +5,7 @@
 // file stays focused on fetching and rendering.
 
 import { useState, useEffect, useMemo } from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
 import { getSeasons } from '../utils/api'
 import { filterResultRows } from '../utils/resultSearch'
 import { useFadeIn } from '../hooks/useFadeIn'

@@ -5,6 +5,7 @@
 import { useState, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Navbar from './components/Navbar'
+import { NavLink } from "react-router";
 import Footer from './components/Footer'
 import AnimatedBackground from './components/AnimatedBackground'
 import { PAGES } from './constants/pages'
@@ -27,6 +28,17 @@ const pageStyle = {
   flexDirection: 'column',
   width: '100%',
   minHeight: 0,
+}
+
+
+export function MyAppNav() {
+  return (
+    <nav>
+      <NavLink to="/results" end>
+        Results      
+      </NavLink>
+    </nav>
+  );
 }
 
 export default function App() {

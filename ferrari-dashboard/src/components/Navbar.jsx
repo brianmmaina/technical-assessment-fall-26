@@ -4,6 +4,7 @@ import FerrariShield from './FerrariShield.jsx'
 import { FERRARI_LOGO_SRC } from '../constants/ferrariAssets.js'
 import { PAGES } from '../constants/pages.js'
 import { useTheme } from '../hooks/useTheme.js'
+import { NavLink } from "react-router";
 
 const MotionHeader = motion.header
 const MotionDiv = motion.div
@@ -24,6 +25,16 @@ function IconMoon() {
       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
     </svg>
   )
+}
+
+export function MyAppNav() {
+  return (
+    <nav>
+      <NavLink to="/results" end>
+        Results      
+      </NavLink>
+    </nav>
+  );
 }
 
 export default function Navbar({ page, setPage }) {

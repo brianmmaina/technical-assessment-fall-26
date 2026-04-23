@@ -157,7 +157,7 @@ export default function Home({ setPage }) {
           >
             Precision.
             <br />
-            <span style={{ color: 'var(--f-red)', fontStyle: 'italic', fontWeight: 700 }}>Emotion.</span>
+            <span style={{ color: 'var(--f-green)', fontStyle: 'italic', fontWeight: 700 }}>Emotion.</span>
             <br />
             <span style={{ fontWeight: 700 }}>Racing.</span>
           </MotionH1>
